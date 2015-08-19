@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
         redirect_to @todo_list
         
       else
-        flash[:error] = 'Todo list was not created '
+        flash[:notice] = 'Todo list was not created '
         render :new   
        
       end
@@ -51,9 +51,9 @@ class TodoListsController < ApplicationController
   # DELETE /todo_lists/1.json
   def destroy
     if @todo_list.destroy
-      flash[:success]= 'Todo list was successfully destroyed.' 
+      flash[:notice]= 'Todo list was successfully destroyed.' 
     else 
-      flash[:error] = "Did not delete"
+      flash[:notice] = "Did not delete"
     end
     redirect_to root_path
   end

@@ -13,10 +13,10 @@ class TodoItemsController < ApplicationController
 	def create
 		@todo_item = @todo_list.todo_items.build(todo_item_params)
 		if @todo_list.save
-			flash[:success] = "You have added a todo item"
+			flash[:notice] = "You have added a todo item"
 			redirect_to @todo_list
 		else
-			flash[:error] = "Todo Item has not saved "
+			flash[:notice] = "Todo Item has not saved "
 			redirect_to @todo_list
 		end
 	end
@@ -25,9 +25,9 @@ class TodoItemsController < ApplicationController
 	def destroy
 
 		if @todo_item.destroy
-			flash[:success] = "Todo item successfully deleted"
+			flash[:notice] = "Todo item successfully deleted"
 		else 
-			flash[:error] = "Todo item not deleted"
+			flash[:notice] = "Todo item not deleted"
 		end
 		redirect_to @todo_list
 	end

@@ -1,12 +1,9 @@
-<div id="list-index">
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
+<h2 class="todo_list_title">  <%= @todo_list.title %></h2>
 </p>
 
-<p>
-  <strong>Description:</strong>
+<p class="todo_list_sub_title">
   <%= @todo_list.description %>
 </p>
 
@@ -19,9 +16,9 @@
 
 
 </div>
-</div>
 
-<hr>
-<br>
+<div class="links">
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: {confirm: "Are you sure you want to delete your Todo List"} %> | 
 <%= link_to 'Back', todo_lists_path %>
+</div>

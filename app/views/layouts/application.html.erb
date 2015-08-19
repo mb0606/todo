@@ -4,32 +4,26 @@
   <title>Todo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic,300,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-	<header>
-		<div id="top-bar">
-		<h1>TODO</h1>
-		<hr>
-		</div>
-		<br>
 
-	</header>
 
-	<%flash.each do |type, msg| %>
-		<%= content_tag(:div, msg, class: "alert-#{type}") %>
-	<%end%>
+<div class="container">
+
+
 
 
 
 <%= yield %>
 
 
-<hr>
-      <%= debug(params)  if Rails.env.development? %>
 
-      <%= debug(request) if Rails.env.development? %>
+      <%debug(params)  if Rails.env.development? %>
+
+      <% debug(request) if Rails.env.development? %>
 </div>
 
 </body>
