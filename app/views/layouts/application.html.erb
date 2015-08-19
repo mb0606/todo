@@ -7,8 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+	<header>
+		<div id="top-bar">
+		<h1>TODO</h1>
+		<hr>
+		</div>
+		<br>
+
+	</header>
+
+	<%flash.each do |type, msg| %>
+		<%= content_tag(:div, msg, class: "alert-#{type}") %>
+	<%end%>
+
+
 
 <%= yield %>
+
+
+<hr>
+      <%= debug(params)  if Rails.env.development? %>
+
+      <%= debug(request) if Rails.env.development? %>
+</div>
 
 </body>
 </html>
