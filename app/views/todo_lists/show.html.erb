@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+
+<% if !flash.empty? %>
+	<p id="notice"><%= notice %></p>
+	<%end%>
 
 <h2 class="todo_list_title">  <%= @todo_list.title %></h2>
 </p>
